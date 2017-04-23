@@ -17,8 +17,8 @@ delim = ',';
 headerln = 1;
 datapoints = importdata(filename,delim,headerLn);
 [xVal,yVals=[datapoints.data(:,1),datapoints.data(:,2)]
-n = length(xVal)
 
+n = length(xVal)
 sum = 0;
 
 for i = 1:n
