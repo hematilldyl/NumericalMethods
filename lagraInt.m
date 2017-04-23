@@ -16,7 +16,7 @@ filename = 'd:\MatlabPrograms\data.csv';
 delim = ',';
 headerln = 1;
 datapoints = importdata(filename,delim,headerLn);
-[xvals,yvals]=[datapoints.data(:,1),datapoints.data(:,2)]
+[xVal,yVals=[datapoints.data(:,1),datapoints.data(:,2)]
 n = length(xVal)
 
 sum = 0;
