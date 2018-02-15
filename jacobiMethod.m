@@ -1,4 +1,4 @@
-function xi=jacobiexam(a, b, x, es)
+function xi=jacobiMethoda, b, x, es)
 
 [row,column]=size(a); 
 
