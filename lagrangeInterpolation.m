@@ -1,4 +1,4 @@
-function yresult = lagraInt(x)
+function yresult = lagrangeInterpolation(x)
 %{
     Author: Dylan Hematillake
     Date: March 8th, 2017
