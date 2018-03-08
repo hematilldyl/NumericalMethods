@@ -1,4 +1,4 @@
-function xi=jacobiMethoda, b, x, es)
+function xi=jacobiMethod(a, b, x, es)
 
 [row,column]=size(a); 
 
