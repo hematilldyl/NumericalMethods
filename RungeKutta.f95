@@ -5,14 +5,13 @@ PROGRAM example
 	PRINT*,'Enter the initial parameters, y0, x0, N: '
     READ*, yi,xi,N
     
-	!CALL EulerMethod(yi,xi,N)
- 	!CALL MidpointMethod(yi,xi,N)
+    !CALL EulerMethod(yi,xi,N)
+    !CALL MidpointMethod(yi,xi,N)
     !CALL HeunsMethod(yi,xi,N)
     !CALL RalstonsMethod(yi,xi,N)
     CALL RungeKutta4(yi,xi,N)
 END PROGRAM example
-    
-    
+        
 
 SUBROUTINE EulerMethod(y0,x0,Ns)
     REAL :: y0, x0,h
@@ -44,7 +43,7 @@ SUBROUTINE EulerMethod(y0,x0,Ns)
         END FUNCTION dydx
    
 END SUBROUTINE EulerMethod
-
+!_______________________________________________________________!
 !yi+1=yi+phi*h
 	!2nd order: phi = a1k1+a2k2, k1 = f(xi,yi),k2=(xi+pih,yi+q11k1h)
  	!a1+a2=1, a2*p1=0.5, a2*q11 = 0.5
@@ -52,7 +51,10 @@ END SUBROUTINE EulerMethod
     !Midpoint a2=1
     !Ralston's a2=2/3
 
-!k1 = f(xi,yi), k2 = f(xi+h/2,yi+h/2*k1), yi+1=yi+k2*h    
+!k1 = f(xi,yi), k2 = f(xi+h/2,yi+h/2*k1), yi+1=yi+k2*h 
+
+!SECOND ORDER RUNGE KUTTA!
+!_______________________________________________________________!
 SUBROUTINE MidpointMethod(y0,t0,Ns)
     REAL :: y0, t0,h,k1,k2
     REAL, INTENT(IN) :: Ns
@@ -86,7 +88,7 @@ SUBROUTINE MidpointMethod(y0,t0,Ns)
         END FUNCTION dydt
         
 END SUBROUTINE MidpointMethod
-
+!_______________________________________________________________!
 
 SUBROUTINE HeunsMethod(y0,t0,Ns)
     REAL :: y0, t0,h,y1,k1,k2
@@ -121,7 +123,7 @@ SUBROUTINE HeunsMethod(y0,t0,Ns)
         END FUNCTION dydt
         
 END SUBROUTINE HeunsMethod
-
+!_______________________________________________________________!
 SUBROUTINE RalstonsMethod(y0,t0,Ns)
     REAL :: y0,t0,h,k1,k2,a1,a2
     REAL, INTENT(IN) :: Ns
@@ -155,10 +157,13 @@ SUBROUTINE RalstonsMethod(y0,t0,Ns)
         END FUNCTION dydt
         
 END SUBROUTINE RalstonsMethod
+!_______________________________________________________________!
 
 !yi+1=yi+1/6 *(k1,2k2,2k3,k4)h, k1=f(xi,yi),k2=f(xi+0.5h,yi+0.5k1h)
 !k3=f(xi+0.5h,yi,0.5k2h, k4=f(xi+h,yi+k3h)
 
+!FOURTH ORDER RUNGE KUTTA!
+!_______________________________________________________________!
 SUBROUTINE RungeKutta4(y0,t0,Ns)
     REAL :: y0,t0,h,k1,k2,k3,k4
     REAL, INTENT(IN) :: Ns
