@@ -16,7 +16,7 @@ PROGRAM example
 END PROGRAM example
     
 SUBROUTINE Choose(s,y,x,Nst)
-	CHARACTER (LEN=*) :: s
+    CHARACTER (LEN=*) :: s
     REAL :: y, x
     INTEGER :: Nst
     
