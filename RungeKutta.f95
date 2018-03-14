@@ -8,7 +8,7 @@ PROGRAM example
     INTEGER :: N
 	PRINT*,'Enter the initial parameters, y0, x0, N: '
     READ*, yi,xi,N
-    PRINT*,'Enter pick a method: Euler, Midpoint, Heuns, Ralstons, RK4 '
+    PRINT*,'Enter a method: Euler, Midpoint, Heuns, Ralstons, RK4 '
     READ*, s
     
     CALL Choose(s,yi,xi,N)
