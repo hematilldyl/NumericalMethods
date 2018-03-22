@@ -117,7 +117,7 @@ SUBROUTINE RalstonsMethod(y0,t0,Ns)
     REAL, ALLOCATABLE, DIMENSION(:) :: Y
 	h = 1.0/Ns
 	a1 = 1.000/3.000
-    a2 = 2.000/3.000
+    	a2 = 2.000/3.000
 	ALLOCATE(Y(Ns))
     
 	DO i=1,Ns
@@ -273,9 +273,8 @@ SUBROUTINE NSSHeunsMethod(y0,t0,Ns)
         
 END SUBROUTINE NSSHeunsMethod
 
-
 END MODULE ImplicitMethods
-
+!_______________________________________________________
 PROGRAM example
 
     IMPLICIT NONE
